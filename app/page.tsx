@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+//triggerimport styles from "./page.module.css";
 
 export default function Page() {
   const goto = (href: string) => () => (window.location.href = href);
