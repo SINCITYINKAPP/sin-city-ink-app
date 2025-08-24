@@ -1,176 +1,156 @@
-import s from "./page.module.css";
+import styles from "./page.module.css";
 
 export default function Page() {
-  const goto = (href: string) => () => (window.location.href = href);
-
   return (
-    <main>
-      <div className={`${s.container} ${s.header}`}>
-        <div className={s.logo}>
-          <span className={s.badge}>NEW</span>
-          <span>SIN CITY INK APP</span>
-        </div>
-        <div style={{ display: "flex", gap: 12 }}>
-          <button className={s.linkBtn} onClick={goto("/#preise")}>Preise</button>
-          <button className={s.ctaBtn} onClick={goto("https://calendly.com/")}>Demo buchen</button>
-        </div>
-      </div>
-
+    <main className={styles.main}>
       {/* HERO */}
-      <div className={`${s.container} ${s.hero}`}>
-        <div className={s.heroInner}>
-          <div>
-            <h1>Dein Tattoo-Studio, <span style={{ color: "#f59e0b" }}>vollautomatisch</span>.</h1>
-            <p>
-              Branding, Terminplanung, Social-Media-Posts, Local-SEO, Broadcasts und
-              Zahlungs-Automatisierung – alles in einer App. Mit 1-Klick-Freigaben, die Artists lieben.
-            </p>
-            <div className={s.heroButtons}>
-              <button className={s.ctaBtn} onClick={goto("https://sin-city-ink.app/app")}>Kostenlos starten</button>
-              <button className={s.linkBtn} onClick={goto("#features")}>Alle Features</button>
-            </div>
-            <div style={{ marginTop: 18, color: "#9aa0a6" }}>
-              DSGVO-Optionen für WhatsApp, Stripe-Onboarding, Klarna/PayPal – fertig vorbereitet.
-            </div>
-          </div>
-
-          <div className={s.heroMedia}>
-            {/* Simuliertes App-Preview */}
-            <div className={s.phone}>
-              <div className={s.screen}>
-                <div className={s.card}>
-                  <b>Design-Assistent</b>
-                  <div className={s.grid}>
-                    <span>🌙 Dunkel</span><span>☀️ Hell</span><span>🎨 Custom</span>
-                  </div>
-                </div>
-                <div className={s.card}><b>Heute 18:00</b><br/>IG-Reel „Fine Line Rose“ – <span className={s.green}>bereit zur Freigabe</span></div>
-                <div className={s.card}><b>GBP-Post</b> „Neue Wanna-Do’s“ – warten auf ✅</div>
-                <div className={s.card}><b>Broadcast</b> „Offene Slots N+7“ – 1-Klick senden</div>
-              </div>
-            </div>
-          </div>
+      <section className={styles.hero}>
+        <div className={styles.heroTag}>SIN CITY INK APP</div>
+        <h1 className={styles.title}>
+          Deine <span>All-in-One KI-App</span> für Tattoo-Studios
+        </h1>
+        <p className={styles.subtitle}>
+          Branding, Terminplanung, Marketing, Local SEO &amp; Automationen – in
+          einem Tool. 1-Klick-Freigaben, fertig. Entwickelt für Artists.
+        </p>
+        <div className={styles.ctaRow}>
+          <a className={styles.ctaPrimary} href="/signup">Jetzt kostenlos starten</a>
+          <a className={styles.ctaGhost} href="#features">Features ansehen</a>
         </div>
-      </div>
+        <div className={styles.heroNote}>
+          <span>⚡</span> In 10 Minuten zum ersten fertigen Design & Kalender.
+        </div>
+      </section>
 
-      {/* KPIs */}
-      <section className={`${s.container} ${s.section}`}>
-        <div className={s.kpis}>
-          <div className={s.kpi}><b>+42%</b><div>mehr Anfragen</div></div>
-          <div className={s.kpi}><b>90%</b><div>Freigabe mit 1 Klick</div></div>
-          <div className={s.kpi}><b>3-4 Tage</b><div>Onboarding komplett</div></div>
-          <div className={s.kpi}><b>&lt;20 €</b><div>Ø Tech-Kosten/User</div></div>
+      {/* TRUST */}
+      <section className={styles.trust}>
+        <div className={styles.trustGrid}>
+          <div>🔒 DSGVO-ready</div>
+          <div>🧠 KI-Automationen</div>
+          <div>📈 Mehr Buchungen</div>
+          <div>🛠️ Für Artists gebaut</div>
         </div>
       </section>
 
       {/* FEATURES */}
-      <section id="features" className={`${s.container} ${s.section}`}>
-        <h2 style={{ marginBottom: 12 }}>Was du bekommst</h2>
-        <div className={s.features}>
-          <div className={s.feature}>
-            <b>Influencer-Monster</b>
-            <p className={s.included}>30-Tage-Plan, Clips, Captions, Hashtags, Trends – alles automatisch. 1-Klick posten.</p>
-            <ul className={s.list}>
-              <li>Reels/Shorts + Cross-Posting</li>
-              <li>Asset-Check & Einwilligung</li>
-              <li>Feierabend-Blocker bei offenen Tasks</li>
-            </ul>
-          </div>
-          <div className={s.feature}>
-            <b>Local-SEO Autopilot</b>
-            <p className={s.included}>Google Business Profile: Profil-Sync, wöchentliche Posts, Reviews & Q&A Antworten.</p>
-            <ul className={s.list}>
-              <li>1-Klick-Freigaben</li>
-              <li>Foto-Upload & Events/Offers</li>
-              <li>Automatische Vorschläge</li>
-            </ul>
-          </div>
-          <div className={s.feature}>
-            <b>Broadcast Autopilot</b>
-            <p className={s.included}>WhatsApp/E-Mail-Kampagnen: Wanna-Do-Drops, offene Slots, Monats-Highlights.</p>
-            <ul className={s.list}>
-              <li>Segmentierung (warm/hot + Stil)</li>
-              <li>A/B-Texte & UTM-Tracking</li>
-              <li>KPIs (CTR, Bookings/Sends)</li>
-            </ul>
-          </div>
-          <div className={s.feature}>
-            <b>Video-Idea Engine</b>
-            <p className={s.included}>Tägliche, trend-aware Video-Ideen mit Hook, Shotliste, Sound-Hinweis & CTA.</p>
-            <ul className={s.list}>
-              <li>Säulen-Mix (Showcase/BTS/…)</li>
-              <li>Score nach Asset-Fit & Trends</li>
-              <li>1-Klick → Postplan</li>
-            </ul>
-          </div>
-          <div className={s.feature}>
-            <b>Nudge Engine</b>
-            <p className={s.included}>Ein Task-Stream statt Chaos. Snooze, DND, Auto-Freigaben für sichere Aktionen.</p>
-          </div>
-          <div className={s.feature}>
-            <b>Zahlungen & Recht</b>
-            <p className={s.included}>Stripe-Onboarding (Abo), Klarna/PayPal fürs Studio, WhatsApp DSGVO-Optionen.</p>
-          </div>
+      <section id="features" className={styles.features}>
+        <h2>Was die App für dich übernimmt</h2>
+        <div className={styles.grid3}>
+          <article className={styles.card}>
+            <h3>Design-Assistent</h3>
+            <p>
+              Dunkel/hell, Logo-Upload, Farben, Schriften – dein Look in
+              Minuten. Auf Knopfdruck Layout-Vorschläge oder komplett eigenes
+              Design.
+            </p>
+          </article>
+          <article className={styles.card}>
+            <h3>Kalender & Buchungen</h3>
+            <p>
+              Mehrere Artists, Abos/Anzahlungen via Stripe, Klarna & PayPal,
+              intelligente Slots & automatische Bestätigungen.
+            </p>
+          </article>
+          <article className={styles.card}>
+            <h3>Influencer-Monster</h3>
+            <p>
+              30-Tage-Plan, Ideen, Clips, Captions & Hashtags. 1-Klick
+              freigeben, die App postet und optimiert automatisch.
+            </p>
+          </article>
+          <article className={styles.card}>
+            <h3>Broadcast-Autopilot</h3>
+            <p>
+              WhatsApp & E-Mail-Kampagnen (Open Slots, Wanna-Dos, Aktionen) mit
+              A/B-Texten und KPIs.
+            </p>
+          </article>
+          <article className={styles.card}>
+            <h3>Local-SEO Autopilot</h3>
+            <p>
+              Google Business Profile Posts, Q&amp;A, Reviews – Vorschläge als
+              Task, 1-Klick-Freigabe.
+            </p>
+          </article>
+          <article className={styles.card}>
+            <h3>Nudge-Engine</h3>
+            <p>
+              Clevere Erinnerungen (Feierabend-Gate, Auto-Freigaben, Snooze &
+              DND), damit nichts liegen bleibt.
+            </p>
+          </article>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section id="preise" className={`${s.container} ${s.section}`}>
-        <h2 style={{ marginBottom: 12 }}>Preise</h2>
-        <div className={s.pricing}>
-          <div className={s.plan}>
-            <h3>Studio – 250€ / Monat</h3>
-            <div className={s.included}>Für Solo-Artists & kleine Teams</div>
-            <ul className={s.list}>
-              <li>Influencer-Monster + Idea Engine</li>
-              <li>Local-SEO Autopilot (GBP)</li>
-              <li>Broadcast Autopilot (WA/E-Mail)</li>
-              <li>Nudge-Engine & Onboarding-Assistent</li>
+      {/* HOW IT WORKS */}
+      <section className={styles.how}>
+        <h2>So startest du – 3 Schritte</h2>
+        <ol className={styles.steps}>
+          <li>
+            <strong>Design wählen</strong> – Logo zeigen, Farben auswählen, Look bestätigen.
+          </li>
+          <li>
+            <strong>Kalender & Zahlungen</strong> – Stripe verbinden, Klarna/PayPal aktivieren,
+            Artists & Öffnungszeiten anlegen.
+          </li>
+          <li>
+            <strong>Kanäle koppeln</strong> – Instagram/TikTok, WhatsApp (DSGVO-konform oder
+            pragmatisch), Google-Profil.
+          </li>
+        </ol>
+        <a className={styles.ctaPrimary} href="/signup">Jetzt einrichten</a>
+      </section>
+
+      {/* PRICING TEASER */}
+      <section className={styles.pricing}>
+        <h2>Einfaches Preismodell</h2>
+        <div className={styles.grid2}>
+          <div className={styles.plan}>
+            <div className={styles.planBadge}>Studio</div>
+            <div className={styles.price}>€250<span>/Monat</span></div>
+            <ul>
+              <li>Design-Assistent</li>
+              <li>Kalender & Buchungen</li>
+              <li>Influencer-Monster (Standard)</li>
+              <li>Broadcast-Autopilot</li>
+              <li>Local-SEO Autopilot</li>
             </ul>
-            <div style={{ display: "flex", gap: 12, marginTop: 18 }}>
-              <button className={s.ctaBtn} onClick={goto("https://sin-city-ink.app/app")}>Jetzt starten</button>
-              <button className={s.linkBtn} onClick={goto("https://calendly.com/")}>Demo buchen</button>
-            </div>
+            <a className={styles.ctaSecondary} href="/signup">Auswählen</a>
           </div>
-          <div className={s.plan} style={{ borderColor: "#f59e0b" }}>
-            <h3>Pro Studio – 500€ / Monat</h3>
-            <div className={s.included}>Für Studios mit Wachstum & Ads</div>
-            <ul className={s.list}>
-              <li>Alles aus „Studio“</li>
-              <li>Zusätzliche Brand-Profile & Artists</li>
-              <li>Erweiterte Automatisierungen & Ads-Connect</li>
+          <div className={`${styles.plan} ${styles.planPro}`}>
+            <div className={styles.planBadge}>Pro</div>
+            <div className={styles.price}>€500<span>/Monat</span></div>
+            <ul>
+              <li>Alles aus Studio</li>
+              <li>Erweiterte KI-Optimierung</li>
+              <li>Mehr Automationen & Post-Kontingente</li>
               <li>Priorisierter Support</li>
             </ul>
-            <div style={{ display: "flex", gap: 12, marginTop: 18 }}>
-              <button className={s.ctaBtn} onClick={goto("https://sin-city-ink.app/app")}>Pro buchen</button>
-              <button className={s.linkBtn} onClick={goto("https://calendly.com/")}>Beratung</button>
-            </div>
+            <a className={styles.ctaPrimary} href="/signup">Pro starten</a>
           </div>
         </div>
-        <p style={{ color: "#9aa0a6", marginTop: 12 }}>
-          Hinweis: WhatsApp Business Platform (DSGVO-konform) wird über den Meta-Account des Studios abgerechnet.
-          Alternativ bieten wir eine einfache Geräte-Kopplung (einmalige Einrichtungsgebühr via Stripe).
+        <p className={styles.smallNote}>
+          Abrechnung via Stripe. Zusatzkosten (z. B. WhatsApp Convos) direkt beim Anbieter.
         </p>
       </section>
 
-      {/* FAQ */}
-      <section className={`${s.container} ${s.section}`}>
-        <h2>FAQ</h2>
-        <div className={s.faq}>
-          <div className={s.q}><b>Wie schnell bin ich live?</b><br/>Erste Ergebnisse in 15–30 Min (Design & Kalender). Komplette Einrichtung in 3–4 Tagen mit Checkliste.</div>
-          <div className={s.q}><b>Brauche ich Programmier-Skills?</b><br/>Nein. Die App führt dich Frage-für-Frage durch alles Wichtige.</div>
-          <div className={s.q}><b>Welche Messenger/Payments?</b><br/>WhatsApp (2 Wege: DSGVO-konform oder Gerät), Stripe, Klarna, PayPal.</div>
-        </div>
-      </section>
-
       {/* FOOTER */}
-      <div className={`${s.container} ${s.footer}`}>
-        <div>© {new Date().getFullYear()} SIN CITY INK APP</div>
-        <div style={{ display: "flex", gap: 18 }}>
-          <a href="/impressum" style={{ color: "#9aa0a6", textDecoration: "none" }}>Impressum</a>
-          <a href="/datenschutz" style={{ color: "#9aa0a6", textDecoration: "none" }}>Datenschutz</a>
+      <footer className={styles.footer}>
+        <div className={styles.footerGrid}>
+          <div>
+            <div className={styles.logo}>SIN CITY INK APP</div>
+            <p>Die KI-Plattform für moderne Tattoo-Studios.</p>
+          </div>
+          <nav className={styles.footerNav}>
+            <a href="#features">Features</a>
+            <a href="/signup">Signup</a>
+            <a href="mailto:hello@sin-city-ink.app">Kontakt</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+          </nav>
         </div>
-      </div>
+        <div className={styles.copy}>© {new Date().getFullYear()} SIN CITY INK APP</div>
+      </footer>
     </main>
   );
 }
